@@ -94,8 +94,15 @@
       padding: 5px 12px;
       color: var(--text2);
       transition: all .15s;
-    }
-    .btn-ghost:hover { color: var(--text); background: var(--bg2); }
+
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none; 
+  }
+  .btn-ghost:hover { color: var(--text); background: var(--bg2); }
+
+
+    
 
     /* ── Topic pills ── */
     .pills { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
@@ -329,11 +336,14 @@
 <body>
 <div class="container">
 
-  <div class="header">
+<div class="header">
+  <div style="display: flex; gap: 8px; align-items: center;">
+    <a href="../../" class="btn-ghost" style="text-decoration: none;">🏠 Home</a>
     <h1>华语词卡 <span>Mandarin Flashcards</span></h1>
-    <button class="btn-ghost" onclick="doShuffle()">🔀 Shuffle</button>
   </div>
-
+  <button class="btn-ghost" onclick="doShuffle()">🔀 Shuffle</button>
+</div>
+  
   <div class="pills"     id="pills"></div>
   <div class="dots"      id="dots"></div>
   <div class="pbar"><div class="pfill" id="pfill"></div></div>
