@@ -1,6 +1,9 @@
 const VOCAB_DATA = [
   
-  
+  { char: '上课', py: 'shàng kè', ms: 'masuk kelas / menghadiri kelas', en: 'attend class', topic: 'Topic 2', emoji: '🏫', strokes: [['上'], ['讠','课']], tip: '上 = 3 strokes. 课 = 10 strokes (speech radical 讠).', count: '3 + 10 = 13' },
+  { char: '儿歌', py: 'ér gē', ms: 'lagu kanak-kanak', en: "children's song", topic: 'Topic 2', emoji: '🎵', strokes: [['儿'], ['欠','歌']], tip: '儿 = 2 strokes. 歌 = 14 strokes (yawn radical 欠 on the right).', count: '2 + 14 = 16' },
+  { char: '故事', py: 'gù shi', ms: 'cerita', en: 'story', topic: 'Topic 2', emoji: '📖', strokes: [['攵','故'], ['事']], tip: '故 = 9 strokes. 事 = 8 strokes.', count: '9 + 8 = 17' },
+  { char: '知识', py: 'zhī shi', ms: 'pengetahuan / ilmu', en: 'knowledge', topic: 'Topic 2', emoji: '🧠', strokes: [['矢','知'], ['讠','识']], tip: '知 = 8 strokes. 识 = 7 strokes (speech radical 讠).', count: '8 + 7 = 15' },
   { char: '爸爸', py: 'bà ba', ms: 'ayah / bapa', en: 'father', topic: 'Topic 3', emoji: '👨', strokes: [['父','爸'], ['爸爸']], tip: '爸 = 8 strokes: father radical 父 on top, 巴 below.', count: '8 + 8 = 16' },
   { char: '回来', py: 'huí lái', ms: 'balik / kembali', en: 'come back / return', topic: 'Topic 3', emoji: '🔙', strokes: [['囗','回'], ['木','来']], tip: '回 = 6 strokes: two nested squares. 来 = 7 strokes.', count: '6 + 7 = 13' },
   { char: '姐姐', py: 'jiě jie', ms: 'kakak perempuan', en: 'older sister', topic: 'Topic 3', emoji: '👧', strokes: [['女','姐'], ['姐姐']], tip: '姐 = 8 strokes: woman radical 女 on left.', count: '8 + 8 = 16' },
