@@ -41,7 +41,7 @@ const VOCAB_DATA = [
 
    
   // ─── TOPIC 8 ──────────────────────────────────────────
- { char: '香蕉', py: 'xiāng jiāo', ms: 'pisang', en: 'banana', topic: 'Topic 8.1', emoji: '🍌', strokes: [['禾','香'], ['艹','蕉']], tip: '蕉 has the grass/plant radical 艹 on top, common for fruits and plants.', count: '9 + 15 = 24' },
+  { char: '香蕉', py: 'xiāng jiāo', ms: 'pisang', en: 'banana', topic: 'Topic 8.1', emoji: '🍌', strokes: [['禾','香'], ['艹','蕉']], tip: '蕉 has the grass/plant radical 艹 on top, common for fruits and plants.', count: '9 + 15 = 24' },
   { char: '黄色', py: 'huáng sè', ms: 'warna kuning', en: 'yellow color', topic: 'Topic 8.1', emoji: '💛', strokes: [['黄'], ['色']], tip: '黄 means yellow. 色 means color.', count: '11 + 6 = 17' },
   { char: '滑梯', py: 'huá tī', ms: 'papan gelongsor', en: 'slide', topic: 'Topic 8.1', emoji: '🛝', strokes: [['氵','滑'], ['木','梯']], tip: '滑 has the water radical 氵 (slippery/smooth). 梯 has the wood radical 木 (ladders were made of wood).', count: '12 + 11 = 23' },
   { char: '爬山', py: 'pá shān', ms: 'mendaki gunung', en: 'climb a mountain', topic: 'Topic 8.1', emoji: '🧗', strokes: [['爪','爬'], ['山']], tip: '爬 has the claw radical 爪, like grabbing things to climb. 山 looks like three mountain peaks.', count: '8 + 3 = 11' },
