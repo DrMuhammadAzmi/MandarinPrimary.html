@@ -156,14 +156,49 @@
         .btn-wrong { background: #450a0a; color: #fca5a5; }
     }
 
-    .pills { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
-    .pill { font-size: 11px; padding: 4px 12px; border-radius: 20px; cursor: pointer; border: 0.5px solid var(--border2); background: transparent; color: var(--text2); transition: all .15s; }
-    .pill.active { background: var(--bg-info); color: var(--text-info); border-color: var(--info); font-weight: 500; }
-    .pill.review-pill { border-color: #f59e0b; color: #d97706; background: #fef3c7; }
-    .pill.review-pill.active { background: #f59e0b; color: white; }
-    @media (prefers-color-scheme: dark) {
-        .pill.review-pill { background: #451a03; color: #fbbf24; border-color: #b45309; }
-        .pill.review-pill.active { background: #b45309; color: white; }
+    /* ── Topic Selector Area ── */
+    .topic-selector-zone {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+      width: 100%;
+    }
+
+    .btn-all {
+      font-size: 13px;
+      padding: 8px 16px;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      border: 0.5px solid var(--border2);
+      background: var(--bg);
+      color: var(--text);
+      font-weight: 500;
+      transition: all .15s;
+    }
+    
+    .btn-all.active {
+      background: var(--bg-info);
+      color: var(--text-info);
+      border-color: var(--info);
+      font-weight: 600;
+    }
+
+    .topic-dropdown {
+      flex: 1; 
+      font-size: 13px;
+      padding: 8px 12px;
+      border-radius: var(--radius-md);
+      border: 0.5px solid var(--border2);
+      background: var(--bg);
+      color: var(--text);
+      outline: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    
+    .topic-dropdown:focus {
+      border-color: var(--info);
     }
 
     .card { background: var(--bg); border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 22px 24px 20px; margin-bottom: 14px; position: relative; }
@@ -237,7 +272,13 @@
     </div>
   </div>
 
-  <div class="pills" id="pills"></div>
+  <div class="topic-selector-zone">
+    <button id="btn-all-pill" class="btn-all active" onclick="setTopic('All')">All</button>
+    
+    <select id="topic-select" class="topic-dropdown" onchange="setTopic(this.value)">
+      </select>
+  </div>
+  
   <div class="dots" id="dots"></div>
   <div class="pbar"><div class="pfill" id="pfill"></div></div>
   <div class="voice-warn" id="voice-warn">⚠️ No Mandarin voice found on this browser.</div>
@@ -347,33 +388,46 @@ function mark(isCorrect) {
   if (isCorrect && idx < words.length - 1) setTimeout(() => move(1), 1400);
 }
 
-function renderPills() {
-  const topics = ['All', ...new Set(ALL.map(c => c.topic))];
-  let html = topics.map(t =>
-    `<button class="pill${topic === t ? ' active' : ''}" onclick="setTopic('${t}')">${t}</button>`
-  ).join('');
+// We map out the themes for each topic so they appear cleanly in the dropdown
+const TOPIC_THEMES = {
+  'Topic 2': '🏫 Kelas (Classroom)',
+  'Topic 3': '👨 Keluarga (Family)',
+  'Topic 4': '🍚 Makanan (Food & House)',
+  'Topic 5': '🏞️ Alam semulajadi (Nature)',
+  'Topic 6': '🐯 Haiwan & Sifat (Animals)',
+  'Topic 8A': '🍌 Pisang & Aktiviti',
+  'Topic 8B': '🎤 Menyanyi & Angin'
+};
 
-  // Add Review Pill dynamically if there are words to review
-  if (userStats.needsReview.length > 0) {
-    const isRevActive = topic === 'Review';
-    html += `<button class="pill review-pill ${isRevActive ? 'active' : ''}" onclick="setTopic('Review')">🧠 Needs Review (${userStats.needsReview.length})</button>`;
+function renderPills() {
+  const uniqueTopics = [...new Set(ALL.map(c => c.topic))].sort();
+  const selectMenu = document.getElementById('topic-select');
+  
+  let optionsHtml = `<option value="All" ${topic === 'All' ? 'selected' : ''}>-- Pilih Topik (Select Topic) --</option>`;
+  
+  uniqueTopics.forEach(t => {
+    const themeName = TOPIC_THEMES[t] || ''; 
+    const displayLabel = themeName ? `${t} : ${themeName}` : t;
+    optionsHtml += `<option value="${t}" ${topic === t ? 'selected' : ''}>${displayLabel}</option>`;
+  });
+  
+  selectMenu.innerHTML = optionsHtml;
+
+  const allBtn = document.getElementById('btn-all-pill');
+  if (topic === 'All') {
+    allBtn.classList.add('active');
+  } else {
+    allBtn.classList.remove('active');
   }
-  document.getElementById('pills').innerHTML = html;
 }
 
-function setTopic(t) { 
-  topic = t; 
-  if (t === 'All') {
-    words = [...ALL];
-  } else if (t === 'Review') {
-    words = ALL.filter(c => userStats.needsReview.includes(c.char));
-  } else {
-    words = ALL.filter(c => c.topic === t); 
-  }
-  idx = 0; 
-  reset(); 
+function setTopic(t) {
+  topic = t;
+  words = t === 'All' ? [...ALL] : ALL.filter(c => c.topic === t);
+  idx = 0;
+  reset();
   renderPills(); 
-  render(); 
+  render();
 }
 
 function reset() { shown = { pinyin: false, meaning: false, char: false }; }
