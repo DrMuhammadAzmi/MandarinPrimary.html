@@ -41,15 +41,15 @@ const VOCAB_DATA = [
 
    
   // ─── TOPIC 8 ──────────────────────────────────────────
-  { char: '香蕉', py: 'xiāng jiāo', ms: 'pisang', en: 'banana', topic: 'Topic 8.1', emoji: '🍌', strokes: [['禾','香'], ['艹','蕉']], tip: '蕉 has the grass/plant radical 艹 on top, common for fruits and plants.', count: '9 + 15 = 24' },
-  { char: '黄色', py: 'huáng sè', ms: 'warna kuning', en: 'yellow color', topic: 'Topic 8.1', emoji: '💛', strokes: [['黄'], ['色']], tip: '黄 means yellow. 色 means color.', count: '11 + 6 = 17' },
-  { char: '滑梯', py: 'huá tī', ms: 'papan gelongsor', en: 'slide', topic: 'Topic 8.1', emoji: '🛝', strokes: [['氵','滑'], ['木','梯']], tip: '滑 has the water radical 氵 (slippery/smooth). 梯 has the wood radical 木 (ladders were made of wood).', count: '12 + 11 = 23' },
-  { char: '爬山', py: 'pá shān', ms: 'mendaki gunung', en: 'climb a mountain', topic: 'Topic 8.1', emoji: '🧗', strokes: [['爪','爬'], ['山']], tip: '爬 has the claw radical 爪, like grabbing things to climb. 山 looks like three mountain peaks.', count: '8 + 3 = 11' },
-  { char: '快乐', py: 'kuài lè', ms: 'gembira', en: 'happy', topic: 'Topic 8.1', emoji: '😊', strokes: [['忄','快'], ['乐']], tip: '快 has the standing heart radical 忄, which is used for feelings and emotions.', count: '7 + 5 = 12' },
-  { char: '唱歌', py: 'chàng gē', ms: 'menyanyi', en: 'sing a song', topic: 'Topic 8.2', emoji: '🎤', strokes: [['口','唱'], ['欠','歌']], tip: 'Both characters are related to the mouth/breath! 唱 has the mouth radical 口 on the left.', count: '11 + 14 = 25' },
-  { char: '响起', py: 'xiǎng qǐ', ms: 'berbunyi / bergema', en: 'sound / ring', topic: 'Topic 8.2', emoji: '🔔', strokes: [['口','响'], ['走','起']], tip: '响 (sound) has the mouth radical 口. 起 (rise/start) has the walk radical 走.', count: '9 + 10 = 19' },
-  { char: '落下', py: 'luò xià', ms: 'jatuh', en: 'fall down / drop', topic: 'Topic 8.2', emoji: '🍂', strokes: [['艹','落'], ['下']], tip: '落 has the plant radical 艹, like falling autumn leaves. 下 is an arrow pointing down.', count: '12 + 3 = 15' },
-  { char: '风儿', py: 'fēng ér', ms: 'angin', en: 'wind', topic: 'Topic 8.2', emoji: '🌬️', strokes: [['风'], ['儿']], tip: '风 is the radical for wind. 儿 makes the word sound softer and more poetic.', count: '4 + 2 = 6' },
-  { char: '在', py: 'zài', ms: 'di / sedang', en: 'at / in / on', topic: 'Topic 8.2', emoji: '📍', strokes: [['土','在']], tip: '在 has the earth/ground radical 土 inside it. Used to show location or ongoing action.', count: '6' }
+  { char: '香蕉', py: 'xiāng jiāo', ms: 'pisang', en: 'banana', topic: 'Topic 8-1', emoji: '🍌', strokes: [['禾','香'], ['艹','蕉']], tip: '蕉 has the grass/plant radical 艹 on top, common for fruits and plants.', count: '9 + 15 = 24' },
+  { char: '黄色', py: 'huáng sè', ms: 'warna kuning', en: 'yellow color', topic: 'Topic 8-1', emoji: '💛', strokes: [['黄'], ['色']], tip: '黄 means yellow. 色 means color.', count: '11 + 6 = 17' },
+  { char: '滑梯', py: 'huá tī', ms: 'papan gelongsor', en: 'slide', topic: 'Topic 8-1', emoji: '🛝', strokes: [['氵','滑'], ['木','梯']], tip: '滑 has the water radical 氵 (slippery/smooth). 梯 has the wood radical 木 (ladders were made of wood).', count: '12 + 11 = 23' },
+  { char: '爬山', py: 'pá shān', ms: 'mendaki gunung', en: 'climb a mountain', topic: 'Topic 8-1', emoji: '🧗', strokes: [['爪','爬'], ['山']], tip: '爬 has the claw radical 爪, like grabbing things to climb. 山 looks like three mountain peaks.', count: '8 + 3 = 11' },
+  { char: '快乐', py: 'kuài lè', ms: 'gembira', en: 'happy', topic: 'Topic 8-1', emoji: '😊', strokes: [['忄','快'], ['乐']], tip: '快 has the standing heart radical 忄, which is used for feelings and emotions.', count: '7 + 5 = 12' },
+  { char: '唱歌', py: 'chàng gē', ms: 'menyanyi', en: 'sing a song', topic: 'Topic 8-2', emoji: '🎤', strokes: [['口','唱'], ['欠','歌']], tip: 'Both characters are related to the mouth/breath! 唱 has the mouth radical 口 on the left.', count: '11 + 14 = 25' },
+  { char: '响起', py: 'xiǎng qǐ', ms: 'berbunyi / bergema', en: 'sound / ring', topic: 'Topic 8-2', emoji: '🔔', strokes: [['口','响'], ['走','起']], tip: '响 (sound) has the mouth radical 口. 起 (rise/start) has the walk radical 走.', count: '9 + 10 = 19' },
+  { char: '落下', py: 'luò xià', ms: 'jatuh', en: 'fall down / drop', topic: 'Topic 8-2', emoji: '🍂', strokes: [['艹','落'], ['下']], tip: '落 has the plant radical 艹, like falling autumn leaves. 下 is an arrow pointing down.', count: '12 + 3 = 15' },
+  { char: '风儿', py: 'fēng ér', ms: 'angin', en: 'wind', topic: 'Topic 8-2', emoji: '🌬️', strokes: [['风'], ['儿']], tip: '风 is the radical for wind. 儿 makes the word sound softer and more poetic.', count: '4 + 2 = 6' },
+  { char: '在', py: 'zài', ms: 'di / sedang', en: 'at / in / on', topic: 'Topic 8-2', emoji: '📍', strokes: [['土','在']], tip: '在 has the earth/ground radical 土 inside it. Used to show location or ongoing action.', count: '6' }
   
 ];
